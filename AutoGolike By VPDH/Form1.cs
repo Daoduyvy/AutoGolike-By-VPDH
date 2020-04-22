@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessAccess;
 
 namespace AutoGolike_By_VPDH
 {
     public partial class Form1 : Form
     {
+        NordVPN nordVpn = new NordVPN();
         public Form1()
         {
             InitializeComponent();
@@ -84,5 +86,6 @@ namespace AutoGolike_By_VPDH
         {
             CreateGrid();
         }
+
     }
 }
