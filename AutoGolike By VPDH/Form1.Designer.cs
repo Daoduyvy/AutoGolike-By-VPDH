@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbAuto = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,6 +42,13 @@
             this.grdFacebook = new System.Windows.Forms.DataGridView();
             this.tbStatus = new System.Windows.Forms.TabPage();
             this.grdStatus = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnAddGolikeAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDeleteGolikeAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddFacebooktoGolike = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddFacebookAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDeleteFacebookAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tbAuto.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -51,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdFacebook)).BeginInit();
             this.tbStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStatus)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -140,6 +150,7 @@
             // grdGolike
             // 
             this.grdGolike.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdGolike.ContextMenuStrip = this.contextMenuStrip1;
             this.grdGolike.Location = new System.Drawing.Point(0, 0);
             this.grdGolike.Name = "grdGolike";
             this.grdGolike.Size = new System.Drawing.Size(990, 420);
@@ -159,6 +170,7 @@
             // grdFacebook
             // 
             this.grdFacebook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdFacebook.ContextMenuStrip = this.contextMenuStrip2;
             this.grdFacebook.Location = new System.Drawing.Point(0, 0);
             this.grdFacebook.Name = "grdFacebook";
             this.grdFacebook.Size = new System.Drawing.Size(990, 420);
@@ -182,6 +194,57 @@
             this.grdStatus.Size = new System.Drawing.Size(990, 420);
             this.grdStatus.TabIndex = 0;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddGolikeAccount,
+            this.btnDeleteGolikeAccount});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(158, 48);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddFacebooktoGolike,
+            this.btnAddFacebookAccount,
+            this.btnDeleteFacebookAccount});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(164, 70);
+            // 
+            // btnAddGolikeAccount
+            // 
+            this.btnAddGolikeAccount.Name = "btnAddGolikeAccount";
+            this.btnAddGolikeAccount.Size = new System.Drawing.Size(157, 22);
+            this.btnAddGolikeAccount.Text = "Thêm tài khoản";
+            this.btnAddGolikeAccount.Click += new System.EventHandler(this.btnAddGolikeAccount_Click);
+            // 
+            // btnDeleteGolikeAccount
+            // 
+            this.btnDeleteGolikeAccount.Name = "btnDeleteGolikeAccount";
+            this.btnDeleteGolikeAccount.Size = new System.Drawing.Size(157, 22);
+            this.btnDeleteGolikeAccount.Text = "Xoá tài khoản";
+            this.btnDeleteGolikeAccount.Click += new System.EventHandler(this.btnDeleteGolikeAccount_Click);
+            // 
+            // btnAddFacebooktoGolike
+            // 
+            this.btnAddFacebooktoGolike.Name = "btnAddFacebooktoGolike";
+            this.btnAddFacebooktoGolike.Size = new System.Drawing.Size(163, 22);
+            this.btnAddFacebooktoGolike.Text = "Thêm vào Golike";
+            // 
+            // btnAddFacebookAccount
+            // 
+            this.btnAddFacebookAccount.Name = "btnAddFacebookAccount";
+            this.btnAddFacebookAccount.Size = new System.Drawing.Size(163, 22);
+            this.btnAddFacebookAccount.Text = "Thêm tài khoản";
+            this.btnAddFacebookAccount.Click += new System.EventHandler(this.btnAddFacebookAccount_Click);
+            // 
+            // btnDeleteFacebookAccount
+            // 
+            this.btnDeleteFacebookAccount.Name = "btnDeleteFacebookAccount";
+            this.btnDeleteFacebookAccount.Size = new System.Drawing.Size(163, 22);
+            this.btnDeleteFacebookAccount.Text = "Xoá tài khoản";
+            this.btnDeleteFacebookAccount.Click += new System.EventHandler(this.btnDeleteFacebookAccount_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +265,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdFacebook)).EndInit();
             this.tbStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdStatus)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -221,6 +286,13 @@
         private System.Windows.Forms.DataGridView grdGolike;
         private System.Windows.Forms.DataGridView grdFacebook;
         private System.Windows.Forms.DataGridView grdStatus;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem btnAddGolikeAccount;
+        private System.Windows.Forms.ToolStripMenuItem btnDeleteGolikeAccount;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem btnAddFacebooktoGolike;
+        private System.Windows.Forms.ToolStripMenuItem btnAddFacebookAccount;
+        private System.Windows.Forms.ToolStripMenuItem btnDeleteFacebookAccount;
     }
 }
 
