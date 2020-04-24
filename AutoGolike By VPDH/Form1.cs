@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessAccess;
+using System.Data.SQLite;
 
 namespace AutoGolike_By_VPDH
 {
@@ -85,6 +86,15 @@ namespace AutoGolike_By_VPDH
         private void Form1_Load(object sender, EventArgs e)
         {
             CreateGrid();
+            DataTable dt = new DataTable();
+            string datasouce = @"DataSource=E:\C#\DBAutoGoLike.db;";
+            using (SQLiteConnection conn = new SQLiteConnection(datasouce))
+            {
+                string sql = $"SELECT * FROM FBAccount";
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql,conn);
+                da.Fill(dt);
+                conn.Close();
+            }
         }
 
     }
