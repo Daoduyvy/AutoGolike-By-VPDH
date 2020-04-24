@@ -15,6 +15,7 @@ namespace AutoGolike_By_VPDH
     public partial class Form1 : Form
     {
         NordVPN nordVpn = new NordVPN();
+        GolikeAccount glAccount = new GolikeAccount();
         public Form1()
         {
             InitializeComponent();
@@ -86,16 +87,12 @@ namespace AutoGolike_By_VPDH
         private void Form1_Load(object sender, EventArgs e)
         {
             CreateGrid();
-            DataTable dt = new DataTable();
-            string datasouce = @"DataSource=E:\C#\DBAutoGoLike.db;";
-            using (SQLiteConnection conn = new SQLiteConnection(datasouce))
-            {
-                string sql = $"SELECT * FROM FBAccount";
-                SQLiteDataAdapter da = new SQLiteDataAdapter(sql,conn);
-                da.Fill(dt);
-                conn.Close();
-            }
+           
         }
 
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            glAccount.GetData();
+        }
     }
 }
