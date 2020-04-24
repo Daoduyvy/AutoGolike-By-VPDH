@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="FacebookAccount.cs" />
+    <Compile Include="GolikeAccount.cs" />
     <Compile Include="NordVPN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,5 +8,6 @@ namespace DataAccessLayer
 {
     public class SqlConnector
     {
+
     }
 }
