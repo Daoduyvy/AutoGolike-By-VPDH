@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessAccess;
 
 namespace AutoGolike_By_VPDH
 {
     public partial class Form1 : Form
     {
+        NordVPN nordVpn = new NordVPN();
+        GolikeAccount glAccount = new GolikeAccount();
         public Form1()
         {
             InitializeComponent();
@@ -103,6 +106,9 @@ namespace AutoGolike_By_VPDH
         private void btnDeleteFacebookAccount_Click(object sender, EventArgs e)
         {
 
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            grdGolike.DataSource = glAccount.getAllGlAccount();
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessAccess
 {
-    class NordVPN
+    public class NordVPN
     {
         public void RunCommandCMD(string command)
         {
