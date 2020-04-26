@@ -88,6 +88,24 @@ namespace AutoGolike_By_VPDH
             CreateGrid();
         }
 
+        private void btnAddGolikeAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteGolikeAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddFacebookAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteFacebookAccount_Click(object sender, EventArgs e)
+        {
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             grdGolike.DataSource = glAccount.getAllGlAccount();
