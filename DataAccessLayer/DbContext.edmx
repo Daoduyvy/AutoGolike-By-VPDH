@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AutoGolikeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BankInfomation">
+          <Key>
+            <PropertyRef Name="bankId" />
+          </Key>
+          <Property Name="bankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bankName" Type="nvarchar" MaxLength="50" />
+          <Property Name="nameCard" Type="nchar" MaxLength="50" />
+          <Property Name="bankNumber" Type="int" />
+          <Property Name="bankChiNhanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="glId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fbAccount">
+          <Key>
+            <PropertyRef Name="fiID" />
+          </Key>
+          <Property Name="fiID" Type="int" Nullable="false" />
+          <Property Name="fbUid" Type="int" Nullable="false" />
+          <Property Name="fbPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fb2Fa" Type="nvarchar" MaxLength="50" />
+          <Property Name="fbStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="fbGhiChu" Type="nvarchar" MaxLength="50" />
+          <Property Name="glId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="glAccount">
+          <Key>
+            <PropertyRef Name="glId" />
+          </Key>
+          <Property Name="glId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="glUsername" Type="nchar" MaxLength="50" />
+          <Property Name="glPassword" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="glInformation">
+          <Key>
+            <PropertyRef Name="glInfoId" />
+          </Key>
+          <Property Name="glInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="glEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="glFullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="glPhone" Type="int" Nullable="false" />
+          <Property Name="glSodu" Type="int" Nullable="false" />
+          <Property Name="glLamlai" Type="int" Nullable="false" />
+          <Property Name="glId" Type="int" Nullable="false" />
+          <Property Name="glChoDuyet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="jobId" />
+          </Key>
+          <Property Name="jobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jobStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="jobLink" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="jobAction" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fbId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusTable">
+          <Key>
+            <PropertyRef Name="statusId" />
+          </Key>
+          <Property Name="statusId" Type="int" Nullable="false" />
+          <Property Name="statusContent" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="gdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BankInfomation_glAccount">
+          <End Role="glAccount" Type="Self.glAccount" Multiplicity="1" />
+          <End Role="BankInfomation" Type="Self.BankInfomation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="glAccount">
+              <PropertyRef Name="glId" />
+            </Principal>
+            <Dependent Role="BankInfomation">
+              <PropertyRef Name="glId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fbAccount_glAccount">
+          <End Role="glAccount" Type="Self.glAccount" Multiplicity="1" />
+          <End Role="fbAccount" Type="Self.fbAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="glAccount">
+              <PropertyRef Name="glId" />
+            </Principal>
+            <Dependent Role="fbAccount">
+              <PropertyRef Name="glId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_glInformation_glAccount">
+          <End Role="glAccount" Type="Self.glAccount" Multiplicity="1" />
+          <End Role="glInformation" Type="Self.glInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="glAccount">
+              <PropertyRef Name="glId" />
+            </Principal>
+            <Dependent Role="glInformation">
+              <PropertyRef Name="glId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_job_job">
+          <End Role="fbAccount" Type="Self.fbAccount" Multiplicity="1" />
+          <End Role="job" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fbAccount">
+              <PropertyRef Name="fiID" />
+            </Principal>
+            <Dependent Role="job">
+              <PropertyRef Name="fbId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTable_StatusTable">
+          <End Role="glAccount" Type="Self.glAccount" Multiplicity="1" />
+          <End Role="StatusTable" Type="Self.StatusTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="glAccount">
+              <PropertyRef Name="glId" />
+            </Principal>
+            <Dependent Role="StatusTable">
+              <PropertyRef Name="gdId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AutoGolikeModelStoreContainer">
+          <EntitySet Name="BankInfomation" EntityType="Self.BankInfomation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fbAccount" EntityType="Self.fbAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="glAccount" EntityType="Self.glAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="glInformation" EntityType="Self.glInformation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="job" EntityType="Self.job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusTable" EntityType="Self.StatusTable" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BankInfomation_glAccount" Association="Self.FK_BankInfomation_glAccount">
+            <End Role="glAccount" EntitySet="glAccount" />
+            <End Role="BankInfomation" EntitySet="BankInfomation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fbAccount_glAccount" Association="Self.FK_fbAccount_glAccount">
+            <End Role="glAccount" EntitySet="glAccount" />
+            <End Role="fbAccount" EntitySet="fbAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_glInformation_glAccount" Association="Self.FK_glInformation_glAccount">
+            <End Role="glAccount" EntitySet="glAccount" />
+            <End Role="glInformation" EntitySet="glInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_job_job" Association="Self.FK_job_job">
+            <End Role="fbAccount" EntitySet="fbAccount" />
+            <End Role="job" EntitySet="job" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTable_StatusTable" Association="Self.FK_StatusTable_StatusTable">
+            <End Role="glAccount" EntitySet="glAccount" />
+            <End Role="StatusTable" EntitySet="StatusTable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AutoGolikeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BankInfomation">
+          <Key>
+            <PropertyRef Name="bankId" />
+          </Key>
+          <Property Name="bankId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nameCard" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="bankNumber" Type="Int32" />
+          <Property Name="bankChiNhanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="glId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="glAccount" Relationship="Self.FK_BankInfomation_glAccount" FromRole="BankInfomation" ToRole="glAccount" />
+        </EntityType>
+        <EntityType Name="fbAccount">
+          <Key>
+            <PropertyRef Name="fiID" />
+          </Key>
+          <Property Name="fiID" Type="Int32" Nullable="false" />
+          <Property Name="fbUid" Type="Int32" Nullable="false" />
+          <Property Name="fbPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fb2Fa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fbStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fbGhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="glId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="glAccount" Relationship="Self.FK_fbAccount_glAccount" FromRole="fbAccount" ToRole="glAccount" />
+          <NavigationProperty Name="jobs" Relationship="Self.FK_job_job" FromRole="fbAccount" ToRole="job" />
+        </EntityType>
+        <EntityType Name="glAccount">
+          <Key>
+            <PropertyRef Name="glId" />
+          </Key>
+          <Property Name="glId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="glUsername" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="glPassword" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="BankInfomations" Relationship="Self.FK_BankInfomation_glAccount" FromRole="glAccount" ToRole="BankInfomation" />
+          <NavigationProperty Name="fbAccounts" Relationship="Self.FK_fbAccount_glAccount" FromRole="glAccount" ToRole="fbAccount" />
+          <NavigationProperty Name="glInformations" Relationship="Self.FK_glInformation_glAccount" FromRole="glAccount" ToRole="glInformation" />
+          <NavigationProperty Name="StatusTables" Relationship="Self.FK_StatusTable_StatusTable" FromRole="glAccount" ToRole="StatusTable" />
+        </EntityType>
+        <EntityType Name="glInformation">
+          <Key>
+            <PropertyRef Name="glInfoId" />
+          </Key>
+          <Property Name="glInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="glEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="glFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="glPhone" Type="Int32" Nullable="false" />
+          <Property Name="glSodu" Type="Int32" Nullable="false" />
+          <Property Name="glLamlai" Type="Int32" Nullable="false" />
+          <Property Name="glId" Type="Int32" Nullable="false" />
+          <Property Name="glChoDuyet" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="glAccount" Relationship="Self.FK_glInformation_glAccount" FromRole="glInformation" ToRole="glAccount" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="jobId" />
+          </Key>
+          <Property Name="jobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jobStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="jobLink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="jobAction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fbId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="fbAccount" Relationship="Self.FK_job_job" FromRole="job" ToRole="fbAccount" />
+        </EntityType>
+        <EntityType Name="StatusTable">
+          <Key>
+            <PropertyRef Name="statusId" />
+          </Key>
+          <Property Name="statusId" Type="Int32" Nullable="false" />
+          <Property Name="statusContent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gdId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="glAccount" Relationship="Self.FK_StatusTable_StatusTable" FromRole="StatusTable" ToRole="glAccount" />
+        </EntityType>
+        <Association Name="FK_BankInfomation_glAccount">
+          <End Role="glAccount" Type="Self.glAccount" Multiplicity="1" />
+          <End Role="BankInfomation" Type="Self.BankInfomation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="glAccount">
+              <PropertyRef Name="glId" />
+            </Principal>
+            <Dependent Role="BankInfomation">
+              <PropertyRef Name="glId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fbAccount_glAccount">
+          <End Role="glAccount" Type="Self.glAccount" Multiplicity="1" />
+          <End Role="fbAccount" Type="Self.fbAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="glAccount">
+              <PropertyRef Name="glId" />
+            </Principal>
+            <Dependent Role="fbAccount">
+              <PropertyRef Name="glId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_job_job">
+          <End Role="fbAccount" Type="Self.fbAccount" Multiplicity="1" />
+          <End Role="job" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fbAccount">
+              <PropertyRef Name="fiID" />
+            </Principal>
+            <Dependent Role="job">
+              <PropertyRef Name="fbId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_glInformation_glAccount">
+          <End Role="glAccount" Type="Self.glAccount" Multiplicity="1" />
+          <End Role="glInformation" Type="Self.glInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="glAccount">
+              <PropertyRef Name="glId" />
+            </Principal>
+            <Dependent Role="glInformation">
+              <PropertyRef Name="glId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTable_StatusTable">
+          <End Role="glAccount" Type="Self.glAccount" Multiplicity="1" />
+          <End Role="StatusTable" Type="Self.StatusTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="glAccount">
+              <PropertyRef Name="glId" />
+            </Principal>
+            <Dependent Role="StatusTable">
+              <PropertyRef Name="gdId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AutoGolikeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BankInfomations" EntityType="Self.BankInfomation" />
+          <EntitySet Name="fbAccounts" EntityType="Self.fbAccount" />
+          <EntitySet Name="glAccounts" EntityType="Self.glAccount" />
+          <EntitySet Name="glInformations" EntityType="Self.glInformation" />
+          <EntitySet Name="jobs" EntityType="Self.job" />
+          <EntitySet Name="StatusTables" EntityType="Self.StatusTable" />
+          <AssociationSet Name="FK_BankInfomation_glAccount" Association="Self.FK_BankInfomation_glAccount">
+            <End Role="glAccount" EntitySet="glAccounts" />
+            <End Role="BankInfomation" EntitySet="BankInfomations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fbAccount_glAccount" Association="Self.FK_fbAccount_glAccount">
+            <End Role="glAccount" EntitySet="glAccounts" />
+            <End Role="fbAccount" EntitySet="fbAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_job_job" Association="Self.FK_job_job">
+            <End Role="fbAccount" EntitySet="fbAccounts" />
+            <End Role="job" EntitySet="jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_glInformation_glAccount" Association="Self.FK_glInformation_glAccount">
+            <End Role="glAccount" EntitySet="glAccounts" />
+            <End Role="glInformation" EntitySet="glInformations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTable_StatusTable" Association="Self.FK_StatusTable_StatusTable">
+            <End Role="glAccount" EntitySet="glAccounts" />
+            <End Role="StatusTable" EntitySet="StatusTables" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AutoGolikeModelStoreContainer" CdmEntityContainer="AutoGolikeEntities">
+          <EntitySetMapping Name="BankInfomations">
+            <EntityTypeMapping TypeName="AutoGolikeModel.BankInfomation">
+              <MappingFragment StoreEntitySet="BankInfomation">
+                <ScalarProperty Name="bankId" ColumnName="bankId" />
+                <ScalarProperty Name="bankName" ColumnName="bankName" />
+                <ScalarProperty Name="nameCard" ColumnName="nameCard" />
+                <ScalarProperty Name="bankNumber" ColumnName="bankNumber" />
+                <ScalarProperty Name="bankChiNhanh" ColumnName="bankChiNhanh" />
+                <ScalarProperty Name="glId" ColumnName="glId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fbAccounts">
+            <EntityTypeMapping TypeName="AutoGolikeModel.fbAccount">
+              <MappingFragment StoreEntitySet="fbAccount">
+                <ScalarProperty Name="fiID" ColumnName="fiID" />
+                <ScalarProperty Name="fbUid" ColumnName="fbUid" />
+                <ScalarProperty Name="fbPassword" ColumnName="fbPassword" />
+                <ScalarProperty Name="fb2Fa" ColumnName="fb2Fa" />
+                <ScalarProperty Name="fbStatus" ColumnName="fbStatus" />
+                <ScalarProperty Name="fbGhiChu" ColumnName="fbGhiChu" />
+                <ScalarProperty Name="glId" ColumnName="glId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="glAccounts">
+            <EntityTypeMapping TypeName="AutoGolikeModel.glAccount">
+              <MappingFragment StoreEntitySet="glAccount">
+                <ScalarProperty Name="glId" ColumnName="glId" />
+                <ScalarProperty Name="glUsername" ColumnName="glUsername" />
+                <ScalarProperty Name="glPassword" ColumnName="glPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="glInformations">
+            <EntityTypeMapping TypeName="AutoGolikeModel.glInformation">
+              <MappingFragment StoreEntitySet="glInformation">
+                <ScalarProperty Name="glInfoId" ColumnName="glInfoId" />
+                <ScalarProperty Name="glEmail" ColumnName="glEmail" />
+                <ScalarProperty Name="glFullName" ColumnName="glFullName" />
+                <ScalarProperty Name="glPhone" ColumnName="glPhone" />
+                <ScalarProperty Name="glSodu" ColumnName="glSodu" />
+                <ScalarProperty Name="glLamlai" ColumnName="glLamlai" />
+                <ScalarProperty Name="glId" ColumnName="glId" />
+                <ScalarProperty Name="glChoDuyet" ColumnName="glChoDuyet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobs">
+            <EntityTypeMapping TypeName="AutoGolikeModel.job">
+              <MappingFragment StoreEntitySet="job">
+                <ScalarProperty Name="jobId" ColumnName="jobId" />
+                <ScalarProperty Name="jobStatus" ColumnName="jobStatus" />
+                <ScalarProperty Name="jobLink" ColumnName="jobLink" />
+                <ScalarProperty Name="jobAction" ColumnName="jobAction" />
+                <ScalarProperty Name="fbId" ColumnName="fbId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusTables">
+            <EntityTypeMapping TypeName="AutoGolikeModel.StatusTable">
+              <MappingFragment StoreEntitySet="StatusTable">
+                <ScalarProperty Name="statusId" ColumnName="statusId" />
+                <ScalarProperty Name="statusContent" ColumnName="statusContent" />
+                <ScalarProperty Name="gdId" ColumnName="gdId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
