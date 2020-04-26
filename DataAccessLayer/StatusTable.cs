@@ -14,10 +14,10 @@ namespace DataAccessLayer
     
     public partial class StatusTable
     {
-        public long staId { get; set; }
-        public string staContent { get; set; }
-        public long glID { get; set; }
+        public int statusId { get; set; }
+        public string statusContent { get; set; }
+        public int gdId { get; set; }
     
-        public virtual GLAccount GLAccount { get; set; }
+        public virtual glAccount glAccount { get; set; }
     }
 }

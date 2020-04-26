@@ -12,27 +12,27 @@ namespace DataAccessLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class GLAccount
+    public partial class glAccount
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GLAccount()
+        public glAccount()
         {
-            this.BankInfors = new HashSet<BankInfor>();
-            this.FBAccounts = new HashSet<FBAccount>();
-            this.GLInfors = new HashSet<GLInfor>();
+            this.BankInfomations = new HashSet<BankInfomation>();
+            this.fbAccounts = new HashSet<fbAccount>();
+            this.glInformations = new HashSet<glInformation>();
             this.StatusTables = new HashSet<StatusTable>();
         }
     
-        public long glID { get; set; }
+        public int glId { get; set; }
         public string glUsername { get; set; }
-        public long glPassword { get; set; }
+        public string glPassword { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BankInfor> BankInfors { get; set; }
+        public virtual ICollection<BankInfomation> BankInfomations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FBAccount> FBAccounts { get; set; }
+        public virtual ICollection<fbAccount> fbAccounts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GLInfor> GLInfors { get; set; }
+        public virtual ICollection<glInformation> glInformations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StatusTable> StatusTables { get; set; }
     }

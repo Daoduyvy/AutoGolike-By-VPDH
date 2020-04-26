@@ -12,25 +12,24 @@ namespace DataAccessLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class FBAccount
+    public partial class fbAccount
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public FBAccount()
+        public fbAccount()
         {
-            this.Jobs = new HashSet<Job>();
+            this.jobs = new HashSet<job>();
         }
     
-        public long fbID { get; set; }
-        public long fbUid { get; set; }
-        public string fbPass { get; set; }
-        public string C2fa { get; set; }
-        public string status { get; set; }
-        public string tinhTrang { get; set; }
-        public string ghiChu { get; set; }
-        public long glID { get; set; }
+        public int fiID { get; set; }
+        public int fbUid { get; set; }
+        public string fbPassword { get; set; }
+        public string fb2Fa { get; set; }
+        public string fbStatus { get; set; }
+        public string fbGhiChu { get; set; }
+        public int glId { get; set; }
     
-        public virtual GLAccount GLAccount { get; set; }
+        public virtual glAccount glAccount { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Job> Jobs { get; set; }
+        public virtual ICollection<job> jobs { get; set; }
     }
 }

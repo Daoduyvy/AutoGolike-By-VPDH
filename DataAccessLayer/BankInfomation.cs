@@ -12,15 +12,15 @@ namespace DataAccessLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class BankInfor
+    public partial class BankInfomation
     {
-        public long bankID { get; set; }
+        public int bankId { get; set; }
         public string bankName { get; set; }
         public string nameCard { get; set; }
-        public long bankNumber { get; set; }
-        public string chiNhanh { get; set; }
-        public long glID { get; set; }
+        public Nullable<int> bankNumber { get; set; }
+        public string bankChiNhanh { get; set; }
+        public int glId { get; set; }
     
-        public virtual GLAccount GLAccount { get; set; }
+        public virtual glAccount glAccount { get; set; }
     }
 }

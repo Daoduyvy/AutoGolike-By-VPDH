@@ -13,10 +13,10 @@ namespace DataAccessLayer
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GolikeEntities : DbContext
+    public partial class AutoGolikeEntities : DbContext
     {
-        public GolikeEntities()
-            : base("name=GolikeEntities")
+        public AutoGolikeEntities()
+            : base("name=AutoGolikeEntities")
         {
         }
     
@@ -25,11 +25,11 @@ namespace DataAccessLayer
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BankInfor> BankInfors { get; set; }
-        public virtual DbSet<FBAccount> FBAccounts { get; set; }
-        public virtual DbSet<GLAccount> GLAccounts { get; set; }
-        public virtual DbSet<GLInfor> GLInfors { get; set; }
-        public virtual DbSet<Job> Jobs { get; set; }
+        public virtual DbSet<BankInfomation> BankInfomations { get; set; }
+        public virtual DbSet<fbAccount> fbAccounts { get; set; }
+        public virtual DbSet<glAccount> glAccounts { get; set; }
+        public virtual DbSet<glInformation> glInformations { get; set; }
+        public virtual DbSet<job> jobs { get; set; }
         public virtual DbSet<StatusTable> StatusTables { get; set; }
     }
 }

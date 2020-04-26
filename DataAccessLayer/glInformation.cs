@@ -12,17 +12,17 @@ namespace DataAccessLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class GLInfor
+    public partial class glInformation
     {
-        public long glInforID { get; set; }
+        public int glInfoId { get; set; }
         public string glEmail { get; set; }
-        public string glFullname { get; set; }
-        public long glPhone { get; set; }
-        public long glSodu { get; set; }
-        public long glLamlai { get; set; }
-        public long glID { get; set; }
-        public long glChoduyet { get; set; }
+        public string glFullName { get; set; }
+        public int glPhone { get; set; }
+        public int glSodu { get; set; }
+        public int glLamlai { get; set; }
+        public int glId { get; set; }
+        public int glChoDuyet { get; set; }
     
-        public virtual GLAccount GLAccount { get; set; }
+        public virtual glAccount glAccount { get; set; }
     }
 }

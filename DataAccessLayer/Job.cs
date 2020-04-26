@@ -12,14 +12,14 @@ namespace DataAccessLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Job
+    public partial class job
     {
-        public long jobID { get; set; }
-        public string jobstatus { get; set; }
+        public int jobId { get; set; }
+        public string jobStatus { get; set; }
         public string jobLink { get; set; }
         public string jobAction { get; set; }
-        public long fbID { get; set; }
+        public int fbId { get; set; }
     
-        public virtual FBAccount FBAccount { get; set; }
+        public virtual fbAccount fbAccount { get; set; }
     }
 }

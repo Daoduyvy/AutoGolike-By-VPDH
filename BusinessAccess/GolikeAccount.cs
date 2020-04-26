@@ -7,42 +7,37 @@ using DataAccessLayer;
 
 namespace BusinessAccess
 {
-    
+
     public class GolikeAccount
     {
-        GolikeEntities glAccount;
+        AutoGolikeEntities glAccount;
         public GolikeAccount()
         {
-            glAccount = new GolikeEntities();
+            glAccount = new AutoGolikeEntities();
         }
-       public List<GLAccount> getAllGlAccount()
+        public List<glAccount> getAllGlAccount()
         {
-            return glAccount.GLAccounts.ToList();
+            return glAccount.glAccounts.ToList();
         }
-        public void GetData()
+        public void addGlAccount(glAccount addGlAccount)
         {
-                var q = (from a in glAccount.GLAccounts
-                         select a).ToList();
+            glAccount.glAccounts.Add(addGlAccount);
         }
-        public void addGlAccount(GLAccount addGlAccount)
-        {
-            glAccount.GLAccounts.Add(addGlAccount);
-        }
-        public bool updateGlAccount(int glId, string glUsername, long glPassword)
+        public bool updateGlAccount(int glId, string glUsername, string glPassword)
         {
             bool f = false;
             try
             {
-                GLAccount glaccount = glAccount.GLAccounts.Find(glId);
+                glAccount glaccount = glAccount.glAccounts.Find(glId);
                 glaccount.glUsername = glUsername;
                 glaccount.glPassword = glPassword;
                 glAccount.SaveChanges();
                 return f = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return f;
-                
+
             }
         }
         public bool deleteGlAccount(int glId)
@@ -50,10 +45,10 @@ namespace BusinessAccess
             bool f = false;
             try
             {
-                var x = (from y in glAccount.GLAccounts
-                         orderby y.glID descending
+                var x = (from y in glAccount.glAccounts
+                         orderby y.glId descending
                          select y).FirstOrDefault();
-                glAccount.GLAccounts.Remove(x);
+                glAccount.glAccounts.Remove(x);
                 glAccount.SaveChanges();
                 return f = true;
             }

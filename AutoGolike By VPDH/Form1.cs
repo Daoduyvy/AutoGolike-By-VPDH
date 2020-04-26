@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessAccess;
-using System.Data.SQLite;
 
 namespace AutoGolike_By_VPDH
 {
@@ -87,12 +86,11 @@ namespace AutoGolike_By_VPDH
         private void Form1_Load(object sender, EventArgs e)
         {
             CreateGrid();
-           
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            glAccount.GetData();
+            grdGolike.DataSource = glAccount.getAllGlAccount();
         }
     }
 }
