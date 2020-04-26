@@ -14,6 +14,7 @@ namespace AutoGolike_By_VPDH
     public partial class Form1 : Form
     {
         NordVPN nordVpn = new NordVPN();
+        GolikeAccount glAccount = new GolikeAccount();
         public Form1()
         {
             InitializeComponent();
@@ -87,5 +88,9 @@ namespace AutoGolike_By_VPDH
             CreateGrid();
         }
 
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            grdGolike.DataSource = glAccount.getAllGlAccount();
+        }
     }
 }
