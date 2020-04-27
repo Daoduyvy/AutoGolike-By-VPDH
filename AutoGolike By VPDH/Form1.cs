@@ -104,6 +104,7 @@ namespace AutoGolike_By_VPDH
 
         private void btnDeleteFacebookAccount_Click(object sender, EventArgs e)
         {
+        }
         
         }
 
