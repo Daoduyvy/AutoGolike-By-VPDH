@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -108,7 +108,22 @@ namespace AutoGolike_By_VPDH
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            grdGolike.DataSource = glAccount.getAllGlAccount();
+
         }
+
+        private void btnDeleteGolikeAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddFacebookAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteFacebookAccount_Click(object sender, EventArgs e)
+        {
+        }
+
     }
 }
