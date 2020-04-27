@@ -10,6 +10,12 @@ namespace BusinessAccess
 {
     class Login
     {
+        /// <summary>
+        /// Login function
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <param name="Pass"></param>
+        /// <param name="driver"></param>
         void DangNhapGoLike(string ID, string Pass, ChromeDriver driver)
         {
             try
