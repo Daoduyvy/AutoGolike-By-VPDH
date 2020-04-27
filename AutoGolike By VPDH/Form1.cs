@@ -90,7 +90,6 @@ namespace AutoGolike_By_VPDH
 
         private void btnAddGolikeAccount_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnDeleteGolikeAccount_Click(object sender, EventArgs e)
@@ -105,6 +104,8 @@ namespace AutoGolike_By_VPDH
 
         private void btnDeleteFacebookAccount_Click(object sender, EventArgs e)
         {
+        
+        }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
