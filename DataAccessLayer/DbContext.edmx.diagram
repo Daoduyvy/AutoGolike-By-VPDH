@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ba68c8eaabbc4c809432e34612557dd6" Name="Diagram1">
+        <EntityTypeShape EntityType="AutoGolikeModel.BankInfomation" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoGolikeModel.fbAccount" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoGolikeModel.glAccount" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoGolikeModel.glInformation" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoGolikeModel.job" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoGolikeModel.StatusTable" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="AutoGolikeModel.FK_BankInfomation_glAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoGolikeModel.FK_fbAccount_glAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoGolikeModel.FK_job_job" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoGolikeModel.FK_glInformation_glAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoGolikeModel.FK_StatusTable_StatusTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
