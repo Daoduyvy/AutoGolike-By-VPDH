@@ -1,9 +1,7 @@
-﻿using OpenQA.Selenium.Chrome;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace BusinessAccess
@@ -24,7 +22,7 @@ namespace BusinessAccess
 
                     check = true;
                     driver.Close();
-
+                    Status("Like Page Ok");
                 }
 
 
@@ -67,7 +65,7 @@ namespace BusinessAccess
             catch
             {
                 driver.Close();
-
+                Status("Nhiệm Vụ Theo Dõi Lỗi Rồi !");
                 check_follow = false;
             }
 
