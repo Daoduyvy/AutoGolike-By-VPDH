@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows;
-using System.IO;
 
 namespace AutoGolike_By_VPDH
 {
-    public partial class GolikeForm : Form
+    public partial class AddAccount : Form
     {
-        public GolikeForm()
+        public AddAccount()
         {
             InitializeComponent();
         }
@@ -28,9 +27,8 @@ namespace AutoGolike_By_VPDH
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string url = ofd.FileName;
-                tbDataPath.Text = url;
                 DataTable dt = Convert(url, "test", "|");
-                dataGridView1.DataSource = dt;
+                GridViewAddAccount.DataSource = dt.DefaultView;
 
             }
         }
@@ -39,9 +37,13 @@ namespace AutoGolike_By_VPDH
         public DataTable Convert(string File, string TableName, string delimiter)
         {
             table = new DataTable();
-            table.Columns.Add("Username");
-            table.Columns.Add("Password");
-            
+            table.Columns.Add("uid");
+            table.Columns.Add("Pass");
+            table.Columns.Add("2fa");
+            table.Columns.Add("Cookie");
+            table.Columns.Add("username golike");
+            table.Columns.Add("pass golike");
+            table.Columns.Add("Status");
 
             StreamReader s = new StreamReader(File);
 
@@ -56,19 +58,6 @@ namespace AutoGolike_By_VPDH
             return table;
         }
 
-        private void BtnStart_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnStop_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnSave_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

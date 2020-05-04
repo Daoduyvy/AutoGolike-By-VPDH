@@ -1,4 +1,10 @@
-Username1|Password1
-Username2|Password2
-Username3|Password3
-Username4|Password4
+uid1|Password1|2fa1|Cookie1|UsernameGolike1|PassGolike1
+uid2|Password2|2fa2|Cookie2|UsernameGolike2|PassGolike2
+uid3|Password3|2fa3|Cookie3|UsernameGolike3|PassGolike3
+uid4|Password4|2fa4|Cookie4|UsernameGolike4|PassGolike4
+uid5|Password5|2fa5|Cookie5|UsernameGolike5|PassGolike5
+uid6|Password6|2fa6|Cookie6|UsernameGolike6|PassGolike6
+uid7|Password7|2fa7|Cookie7|UsernameGolike7|PassGolike7
+uid8|Password8|2fa8|Cookie8|UsernameGolike8|PassGolike8
+uid9|Password9|2fa9|Cookie9|UsernameGolike9|PassGolike9
+

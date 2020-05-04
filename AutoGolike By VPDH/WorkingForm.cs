@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace AutoGolike_By_VPDH
 {
-    public partial class FacebookForm : Form
+    public partial class WorkingForm : Form
     {
-        public FacebookForm()
+        public WorkingForm()
         {
             InitializeComponent();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLoadInfor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

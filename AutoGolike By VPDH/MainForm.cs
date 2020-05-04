@@ -12,9 +12,10 @@ namespace AutoGolike_By_VPDH
 {
     public partial class MainForm : Form
     {
-        GolikeForm glf = new GolikeForm();
-        FacebookForm fbf = new FacebookForm();
+        
         SettingsForm stf = new SettingsForm();
+        WorkingForm wkf = new WorkingForm();
+        Manager mf = new Manager();
         public MainForm()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace AutoGolike_By_VPDH
         private void MainLoadForm()
         {
             IsMdiContainer = true;
-            addForm(glf);
+            addForm(wkf);
         }
         private void addForm(Form f)
         {
@@ -37,22 +38,22 @@ namespace AutoGolike_By_VPDH
             
             f.Show();
         }
-        private void BtnMenuGolike_Click(object sender, EventArgs e)
-        {
-            addForm(glf);
-        }
+        
 
-        private void BtnMenuFacebook_Click(object sender, EventArgs e)
-        {
-            FacebookForm fbf = new FacebookForm();
-            addForm(fbf);
-            
-
-        }
-
+        
         private void BtnMenuSettings_Click(object sender, EventArgs e)
         {
             addForm(stf);
+        }
+
+        private void BtnMenuWorking_Click(object sender, EventArgs e)
+        {
+            addForm(wkf);
+        }
+
+        private void BtnMenuManager_Click(object sender, EventArgs e)
+        {
+            addForm(mf);
         }
     }
 }
