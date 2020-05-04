@@ -24,7 +24,7 @@ namespace BusinessAccess
 
                     check = true;
                     driver.Close();
-                    Status("Like Page Ok");
+                    
                 }
 
 
@@ -67,7 +67,7 @@ namespace BusinessAccess
             catch
             {
                 driver.Close();
-                Status("Nhiệm Vụ Theo Dõi Lỗi Rồi !");
+                
                 check_follow = false;
             }
 
