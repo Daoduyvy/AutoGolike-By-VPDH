@@ -39,7 +39,6 @@ namespace AutoGolike_By_VPDH
         public DataTable Convert(string File, string TableName, string delimiter)
         {
             table = new DataTable();
-            table.Columns.Add("ID");
             table.Columns.Add("Username");
             table.Columns.Add("Password");
             
