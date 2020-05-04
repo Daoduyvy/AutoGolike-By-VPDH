@@ -30,8 +30,8 @@
         {
             this.MainView = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnMenuGolike = new System.Windows.Forms.Button();
-            this.btnMenuFacebook = new System.Windows.Forms.Button();
+            this.btnMenuWorking = new System.Windows.Forms.Button();
+            this.btnMenuManager = new System.Windows.Forms.Button();
             this.btnMenuSettings = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,8 +47,8 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.flowLayoutPanel1.Controls.Add(this.btnMenuGolike);
-            this.flowLayoutPanel1.Controls.Add(this.btnMenuFacebook);
+            this.flowLayoutPanel1.Controls.Add(this.btnMenuWorking);
+            this.flowLayoutPanel1.Controls.Add(this.btnMenuManager);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuSettings);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -56,34 +56,34 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 750);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // btnMenuGolike
+            // btnMenuWorking
             // 
-            this.btnMenuGolike.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnMenuGolike.FlatAppearance.BorderColor = System.Drawing.Color.LightSalmon;
-            this.btnMenuGolike.FlatAppearance.BorderSize = 2;
-            this.btnMenuGolike.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnMenuGolike.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
-            this.btnMenuGolike.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuGolike.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMenuGolike.Location = new System.Drawing.Point(3, 3);
-            this.btnMenuGolike.Name = "btnMenuGolike";
-            this.btnMenuGolike.Size = new System.Drawing.Size(197, 66);
-            this.btnMenuGolike.TabIndex = 0;
-            this.btnMenuGolike.Text = "Golike";
-            this.btnMenuGolike.UseVisualStyleBackColor = false;
-            this.btnMenuGolike.Click += new System.EventHandler(this.BtnMenuGolike_Click);
+            this.btnMenuWorking.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMenuWorking.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuWorking.Location = new System.Drawing.Point(3, 3);
+            this.btnMenuWorking.Name = "btnMenuWorking";
+            this.btnMenuWorking.Size = new System.Drawing.Size(197, 66);
+            this.btnMenuWorking.TabIndex = 3;
+            this.btnMenuWorking.Text = "Working";
+            this.btnMenuWorking.UseVisualStyleBackColor = false;
+            this.btnMenuWorking.Click += new System.EventHandler(this.BtnMenuWorking_Click);
             // 
-            // btnMenuFacebook
+            // btnMenuManager
             // 
-            this.btnMenuFacebook.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnMenuFacebook.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuFacebook.Location = new System.Drawing.Point(3, 75);
-            this.btnMenuFacebook.Name = "btnMenuFacebook";
-            this.btnMenuFacebook.Size = new System.Drawing.Size(197, 66);
-            this.btnMenuFacebook.TabIndex = 1;
-            this.btnMenuFacebook.Text = "Facebook";
-            this.btnMenuFacebook.UseVisualStyleBackColor = false;
-            this.btnMenuFacebook.Click += new System.EventHandler(this.BtnMenuFacebook_Click);
+            this.btnMenuManager.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMenuManager.FlatAppearance.BorderColor = System.Drawing.Color.LightSalmon;
+            this.btnMenuManager.FlatAppearance.BorderSize = 2;
+            this.btnMenuManager.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnMenuManager.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.btnMenuManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuManager.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMenuManager.Location = new System.Drawing.Point(3, 75);
+            this.btnMenuManager.Name = "btnMenuManager";
+            this.btnMenuManager.Size = new System.Drawing.Size(197, 66);
+            this.btnMenuManager.TabIndex = 0;
+            this.btnMenuManager.Text = "Manager";
+            this.btnMenuManager.UseVisualStyleBackColor = false;
+            this.btnMenuManager.Click += new System.EventHandler(this.BtnMenuManager_Click);
             // 
             // btnMenuSettings
             // 
@@ -116,8 +116,8 @@
 
         private System.Windows.Forms.Panel MainView;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnMenuGolike;
-        private System.Windows.Forms.Button btnMenuFacebook;
+        private System.Windows.Forms.Button btnMenuManager;
         private System.Windows.Forms.Button btnMenuSettings;
+        private System.Windows.Forms.Button btnMenuWorking;
     }
 }
