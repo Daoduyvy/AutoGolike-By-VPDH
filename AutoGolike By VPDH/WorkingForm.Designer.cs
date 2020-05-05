@@ -33,7 +33,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnEndThreads = new System.Windows.Forms.Button();
-            this.btnLoadInfor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +56,7 @@
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
             // panel1
             // 
@@ -76,7 +76,7 @@
             this.btnStop.TabIndex = 3;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.Button3_Click);
+            this.btnStop.Click += new System.EventHandler(this.BtnStop_Click);
             // 
             // btnEndThreads
             // 
@@ -86,23 +86,13 @@
             this.btnEndThreads.TabIndex = 2;
             this.btnEndThreads.Text = "Hết Luồng >> Dừng";
             this.btnEndThreads.UseVisualStyleBackColor = true;
-            // 
-            // btnLoadInfor
-            // 
-            this.btnLoadInfor.Location = new System.Drawing.Point(1184, 23);
-            this.btnLoadInfor.Name = "btnLoadInfor";
-            this.btnLoadInfor.Size = new System.Drawing.Size(106, 39);
-            this.btnLoadInfor.TabIndex = 4;
-            this.btnLoadInfor.Text = "Load Infor";
-            this.btnLoadInfor.UseVisualStyleBackColor = true;
-            this.btnLoadInfor.Click += new System.EventHandler(this.BtnLoadInfor_Click);
+            this.btnEndThreads.Click += new System.EventHandler(this.BtnEndThreads_Click);
             // 
             // WorkingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1302, 747);
-            this.Controls.Add(this.btnLoadInfor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -121,6 +111,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnEndThreads;
-        private System.Windows.Forms.Button btnLoadInfor;
     }
 }

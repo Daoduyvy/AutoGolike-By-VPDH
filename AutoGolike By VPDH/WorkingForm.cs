@@ -17,12 +17,17 @@ namespace AutoGolike_By_VPDH
             InitializeComponent();
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void BtnStart_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void BtnLoadInfor_Click(object sender, EventArgs e)
+        private void BtnEndThreads_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnStop_Click(object sender, EventArgs e)
         {
 
         }

@@ -28,7 +28,11 @@ namespace AutoGolike_By_VPDH
             {
                 string url = ofd.FileName;
                 DataTable dt = Convert(url, "test", "|");
-                GridViewAddAccount.DataSource = dt.DefaultView;
+                foreach (DataRow row in dt.Rows)
+                {
+                    GridViewAddAccount.Rows.Add(row[0], row[1], row[2], row[3], row[4], row[5]);
+                }
+                //GridViewAddAccount.DataSource = dt.DefaultView;
 
             }
         }
@@ -58,6 +62,9 @@ namespace AutoGolike_By_VPDH
             return table;
         }
 
-        
+        private void BtnSaveDB_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

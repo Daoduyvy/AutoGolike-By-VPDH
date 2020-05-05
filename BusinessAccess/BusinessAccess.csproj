@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Job.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="FacebookAccount.cs" />
     <Compile Include="GolikeAccount.cs" />
